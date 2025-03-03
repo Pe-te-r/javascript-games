@@ -5,6 +5,7 @@ class Road{
         this.width=width
         this.color=color
         this.lanes_numbers=lane_number
+        this.ctx=ctx
        this.draw(ctx) 
     }
     draw(ctx){
@@ -23,6 +24,17 @@ class Road{
             ctx.stroke()
         }
     }
- 
+    move_camera(speed = 5, direction = 1) {
+        this.y -= speed * direction; // Move up if direction = 1, down if -1
+
+        // Create a seamless scrolling effect
+        if (this.y <= -this.ctx.canvas.height) {
+            this.y = 0; // Reset for forward motion
+        } else if (this.y >= this.ctx.canvas.height) {
+            this.y = 0; // Reset for reverse motion
+        }
+    }
+    
+    
    
 }
