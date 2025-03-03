@@ -11,7 +11,7 @@ class Game{
         this.road = new Road(this.width/3,0,300,'black',ctx,3)
     }
      start(){
-        const car = new Car(this.road.x+40,this.height-100,40,60,'red')
+        const car = new Car(this.road.x+40,this.height-100,40,60,'red',this.road)
         car.draw(this.ctx)
     }
 }

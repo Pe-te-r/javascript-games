@@ -23,5 +23,6 @@ class Road{
             ctx.stroke()
         }
     }
+ 
    
 }
