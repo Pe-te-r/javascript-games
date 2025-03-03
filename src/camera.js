@@ -1,6 +1,7 @@
 class Camera {
-    constructor(car, road, canvasWidth, canvasHeight) {
+    constructor(car,car_bots, road,canvasWidth, canvasHeight) {
         this.car = car;
+        this.car_bots=car_bots
         this.road = road;
         this.canvasWidth = canvasWidth;
         this.canvasHeight = canvasHeight;
@@ -26,6 +27,12 @@ class Camera {
 
         // Draw the road
         this.road.draw(ctx);
+
+        // Draw cars
+        this.car_bots.forEach(car => {
+            car.draw(ctx)
+            car.update()
+        });
 
         // Draw the car (centered)
         this.car.draw(ctx);

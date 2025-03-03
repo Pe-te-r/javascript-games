@@ -10,7 +10,7 @@ class Road{
     }
     draw(ctx){
         ctx.fillStyle = this.color
-        ctx.fillRect(this.x,this.y,this.width,ctx.canvas.height)
+        ctx.fillRect(this.x,this.y,this.width,ctx.canvas.height *-100)
 
         const laneWidth = this.width/this.lanes_numbers
 
@@ -20,21 +20,11 @@ class Road{
             ctx.strokeStyle = 'white'
             ctx.lineWidth = 5
             ctx.moveTo(this.x + i * laneWidth, this.y)
-            ctx.lineTo(this.x + i * laneWidth, this.y + ctx.canvas.height)
+            ctx.lineTo(this.x + i * laneWidth, this.y + ctx.canvas.height*-100)
             ctx.stroke()
         }
     }
-    move_camera(speed = 5, direction = 1) {
-        this.y -= speed * direction; // Move up if direction = 1, down if -1
-
-        // Create a seamless scrolling effect
-        if (this.y <= -this.ctx.canvas.height) {
-            this.y = 0; // Reset for forward motion
-        } else if (this.y >= this.ctx.canvas.height) {
-            this.y = 0; // Reset for reverse motion
-        }
-    }
-    
+ 
     
    
 }
