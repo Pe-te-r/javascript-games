@@ -10,8 +10,18 @@ class Road{
     draw(ctx){
         ctx.fillStyle = this.color
         ctx.fillRect(this.x,this.y,this.width,ctx.canvas.height)
+
+        const laneWidth = this.width/this.lanes_numbers
+
+        for (let i = 1; i < this.lanes_numbers; i++) {
+            ctx.setLineDash([30, 20])
+            ctx.beginPath()
+            ctx.strokeStyle = 'white'
+            ctx.lineWidth = 5
+            ctx.moveTo(this.x + i * laneWidth, this.y)
+            ctx.lineTo(this.x + i * laneWidth, this.y + ctx.canvas.height)
+            ctx.stroke()
+        }
     }
-    setLanes(){
-        
-    }
+   
 }

@@ -8,10 +8,10 @@ class Game{
         this.canvas.color
         this.canvas.width = this.width
         this.canvas.height = this.height
-        new Road(this.width/3,0,300,'black',ctx)
+        this.road = new Road(this.width/3,0,300,'black',ctx,3)
     }
      start(){
-        const car = new Car(0,0,10,10,'red')
+        const car = new Car(this.road.x+40,this.height-100,40,60,'red')
         car.draw(this.ctx)
     }
 }
