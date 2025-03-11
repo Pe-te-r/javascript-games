@@ -8,7 +8,7 @@ class CarBot {
         this.height = height;
         this.color = color;
         this.rotation = 0; // Car's rotation in radians
-        this.speed = 0; // Current speed
+        this.speed = 2; // Current speed
         this.acceleration = 0.1; // Acceleration rate
         this.friction = 0.02; // Friction to slow down the car
         this.maxSpeed = 5; // Maximum forward speed
@@ -41,12 +41,12 @@ class CarBot {
 
     // Update the car's position, speed, and rotation
     update() {
-        // Apply friction to slow down the car
-        if (this.speed > 0) {
-            this.speed -= this.friction;
-        } else if (this.speed < 0) {
-            this.speed += this.friction;
-        }
+        // Apply friction to slow down the car ii
+        // if (this.speed > 0) {
+        //     this.speed -= this.friction;
+        // } else if (this.speed < 0) {
+        //     this.speed += this.friction;
+        // }
 
         // Prevent the car from turning if it's not moving
         if (Math.abs(this.speed) > 0) {
